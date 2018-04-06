@@ -1,0 +1,30 @@
+app:
+  name: mathtest-core
+
+jwt:
+  header: Authorization
+  expires_in: 3600 # 5 minutes
+  mobile_expires_in: 3600 # 10 minutes
+  secret: queenvictoria
+spring:
+  jpa:
+    hibernate:
+      # possible values: validate | update | create | create-drop
+      ddl-auto: none
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    url: jdbc:mysql://localhost:3306/mathtests?useSSL=false&useUnicode=yes&characterEncoding=UTF-8
+    username: root
+    password: Windy610
+    driver-class-name: com.mysql.jdbc.Driver
+# HTTP to HTTPS
+#server:i
+#  port: 8443
+#  ssl:
+#    key-aliasey: selfsigned
+#    key-password: password
+#    key-store: classpath:ttq.jks
+#    key-store-provider: SUN
+#    key-store-type: JKS
