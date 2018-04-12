@@ -42,7 +42,17 @@ public class Group implements Serializable{
 	@OneToMany(mappedBy="group", fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<Subject> subjects;
-        
+    
+	public Group() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Group(String title, User u) {
+		// TODO Auto-generated constructor stub
+		this.name = title;
+		this.teacher = u;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -75,7 +85,8 @@ public class Group implements Serializable{
 		this.subjects = subjects;
 	}
 	
-	
-
+	public void addSubjects(Subject subject) {
+		subjects.add(subject);
+	}
 	
 }

@@ -1,6 +1,8 @@
 package tdt.it.mathtests.configuration;
 
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,9 +18,9 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import tdt.it.mathtests.security.TokenHelper;
 import tdt.it.mathtests.security.auth.RestAuthenticationEntryPoint;
@@ -62,17 +64,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http     
+        http    
+        		.cors()
+        		.and()
         		.sessionManagement().sessionCreationPolicy( SessionCreationPolicy.STATELESS )
         		.and()
                 .exceptionHandling().authenticationEntryPoint( restAuthenticationEntryPoint )
                 .and()
                 .authorizeRequests()
                 .antMatchers("/auth/**").permitAll()
+                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(new TokenAuthenticationFilter(tokenHelper, jwtUserDetailsService), BasicAuthenticationFilter.class);
-       http.csrf().disable();
+        http.csrf().disable();
     }
     
     @Override
@@ -83,17 +88,50 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/auth/login",
                 "/auth/registryUser"
         );
+        web.ignoring().antMatchers(
+                HttpMethod.GET,
+                "/",
+                "/webjars/**",
+                "/*.html",
+                "/favicon.ico",
+                "/font/*",
+                "/**/*.html",
+                "/**/*.css",
+                "/**/*.js"
+            );
     }
-    
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("*"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(Arrays.asList("Content-Type",
+        		"X-Requested-With",
+        		"Authorization",
+        		"accept",
+        		"Origin",
+        		"Access-Control-Request-Method",
+        		"Access-Control-Request-Headers"));
+        configuration.setExposedHeaders(Arrays.asList("x-auth-token"));
+        //A flag that suggests if CORS is supported with cookie
+        configuration.setAllowCredentials(true);
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
+/*
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
+                		.allowCredentials(true)
+                		.allowedHeaders("*")
+                		.allowedOrigins("*")
                         .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
             }
         };
-    }
+    }*/
     
 }

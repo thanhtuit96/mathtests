@@ -188,7 +188,7 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 177px 130px 33px 95px;
+  padding: 70px 130px 70px 95px;
 }
 
 /*------------------------------------------------------------------
@@ -209,8 +209,9 @@ iframe {
 }
 
 .login100-form-title {
-  font-family: Poppins-Bold;
-  font-size: 24px;
+  font-family: Times New Roman;
+  font-size: 30px;
+  font-weight: bold;
   color: #333333;
   line-height: 1.2;
   text-align: center;
@@ -361,7 +362,7 @@ iframe {
 
 @media (max-width: 992px) {
   .wrap-login100 {
-    padding: 177px 90px 33px 85px;
+    padding: 70px 90px 70px 85px;
   }
 
   .login100-pic {

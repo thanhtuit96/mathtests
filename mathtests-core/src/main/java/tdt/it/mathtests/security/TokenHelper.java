@@ -58,6 +58,18 @@ public class TokenHelper {
         }
         return username;
     }
+    
+    public String getRoleFromToken(String token) {
+        String role;
+        try {
+            final Claims claims = this.getAllClaimsFromToken(token);
+            role = claims.getIssuer();
+        } catch (Exception e) {
+        	role = null;
+        }
+        return role;
+    }
+
 
     public Date getIssuedAtDateFromToken(String token) {
         Date issueAt;

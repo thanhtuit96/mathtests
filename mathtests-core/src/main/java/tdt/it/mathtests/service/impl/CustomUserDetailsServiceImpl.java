@@ -113,13 +113,7 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
     	}
     }
 
-    public void disableUser(User u) {
-    	u.setEnabled(false);
-    	userRepository.save(u);
-    }
-
-    public void enableUser(User u) {
-    	u.setEnabled(true);
+    public void updateUser(User u) {
     	userRepository.save(u);
     }
 

@@ -7,4 +7,5 @@ import tdt.it.mathtests.models.Group;
 
 @Repository
 public interface GroupRepository  extends JpaRepository<Group, Long>{
+	public Group findGroupById(long id);
 }

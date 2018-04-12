@@ -1,10 +1,10 @@
 angular.module('mathtest.services', [])
 .factory('AuthService', function($http) {
-	var user = null;
-	var TOKEN_KEY = 'jwtToken';
+  var user = null;
+  var TOKEN_KEY = 'jwtToken';
   var EXPIRES_IN = "expires_in";
   var PROTOCOL = "http"
-  var ADDRRESS = "localhost:8080"
+  var ADDRRESS = "localhost:9999/mathtestscore"
   
   var getJwtToken = function() {
     return localStorage.getItem(TOKEN_KEY);
@@ -40,7 +40,7 @@ angular.module('mathtest.services', [])
       if (token) {
           return {
             "Authorization": "Bearer " + token,
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json;charset=UTF-8'
           };
       } else {
           return {
@@ -48,12 +48,11 @@ angular.module('mathtest.services', [])
           };
       }
   }
-  
   return {
 	    getJwtToken: getJwtToken,
 	    getExpiresIn: getExpiresIn,
-      getProtocol: getProtocol,
-      getAddress: getAddress,
+	    getProtocol: getProtocol,
+	    getAddress: getAddress,
 	    setJwtToken: setJwtToken,
 	    setExpiresIn: setExpiresIn,
 	    removeAuth: removeAuth,

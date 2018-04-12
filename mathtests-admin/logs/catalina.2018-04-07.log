@@ -1,0 +1,120 @@
+07-Apr-2018 03:46:39.908 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 03:46:41.672 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 03:46:41.723 INFO [Thread-5] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+07-Apr-2018 03:46:44.135 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 03:46:44.137 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 03:46:44.236 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 03:46:44.237 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 19:45:13.906 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.29
+07-Apr-2018 19:45:14.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2018 13:11:12 UTC
+07-Apr-2018 19:45:14.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.29.0
+07-Apr-2018 19:45:14.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+07-Apr-2018 19:45:14.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.4.0-119-generic
+07-Apr-2018 19:45:14.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+07-Apr-2018 19:45:14.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-8-oracle/jre
+07-Apr-2018 19:45:14.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_161-b12
+07-Apr-2018 19:45:14.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+07-Apr-2018 19:45:14.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 19:45:14.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 19:45:14.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/thanhtu/Study/OnlineMathTests/mathtests-admin/conf/logging.properties
+07-Apr-2018 19:45:14.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+07-Apr-2018 19:45:14.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+07-Apr-2018 19:45:14.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+07-Apr-2018 19:45:14.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+07-Apr-2018 19:45:14.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 19:45:14.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 19:45:14.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/thanhtu/Study/OnlineMathTests/mathtests-admin/temp
+07-Apr-2018 19:45:14.004 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+07-Apr-2018 19:45:14.743 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 19:45:15.000 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+07-Apr-2018 19:45:15.151 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 19:45:15.152 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+07-Apr-2018 19:45:15.152 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 3215 ms
+07-Apr-2018 19:45:15.459 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+07-Apr-2018 19:45:15.460 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.29
+07-Apr-2018 19:45:15.692 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/thanhtu/Study/OnlineMathTests/mathtests-admin/webapps/ROOT]
+07-Apr-2018 19:45:18.573 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/thanhtu/Study/OnlineMathTests/mathtests-admin/webapps/ROOT] has finished in [2,868] ms
+07-Apr-2018 19:45:18.578 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 19:45:18.628 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 19:45:18.636 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 3483 ms
+07-Apr-2018 20:36:53.504 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 20:36:54.523 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 20:36:54.574 INFO [Thread-5] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+07-Apr-2018 20:36:57.252 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 20:36:57.254 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 20:36:57.383 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 20:36:57.385 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 21:50:47.523 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.29
+07-Apr-2018 21:50:47.791 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2018 13:11:12 UTC
+07-Apr-2018 21:50:47.791 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.29.0
+07-Apr-2018 21:50:47.791 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+07-Apr-2018 21:50:47.791 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.4.0-119-generic
+07-Apr-2018 21:50:47.791 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+07-Apr-2018 21:50:47.792 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-8-oracle/jre
+07-Apr-2018 21:50:47.792 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_161-b12
+07-Apr-2018 21:50:47.792 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+07-Apr-2018 21:50:47.792 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 21:50:47.792 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 21:50:47.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/thanhtu/Study/OnlineMathTests/mathtests-admin/conf/logging.properties
+07-Apr-2018 21:50:47.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+07-Apr-2018 21:50:47.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+07-Apr-2018 21:50:47.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+07-Apr-2018 21:50:47.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+07-Apr-2018 21:50:47.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 21:50:47.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 21:50:47.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/thanhtu/Study/OnlineMathTests/mathtests-admin/temp
+07-Apr-2018 21:50:47.794 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+07-Apr-2018 21:50:54.409 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 21:50:55.432 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+07-Apr-2018 21:50:55.608 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 21:50:55.611 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+07-Apr-2018 21:50:55.612 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 11192 ms
+07-Apr-2018 21:50:56.588 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+07-Apr-2018 21:50:56.589 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.29
+07-Apr-2018 21:50:56.815 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/thanhtu/Study/OnlineMathTests/mathtests-admin/webapps/ROOT]
+07-Apr-2018 21:51:02.325 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [151] milliseconds.
+07-Apr-2018 21:51:02.569 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/thanhtu/Study/OnlineMathTests/mathtests-admin/webapps/ROOT] has finished in [5,754] ms
+07-Apr-2018 21:51:02.572 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 21:51:02.608 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 21:51:02.609 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 6997 ms
+07-Apr-2018 23:48:23.100 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+07-Apr-2018 23:48:23.589 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 23:48:24.693 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 23:48:24.744 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+07-Apr-2018 23:48:28.023 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 23:48:28.262 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 23:48:28.379 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 23:48:28.416 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 23:55:19.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.29
+07-Apr-2018 23:55:19.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2018 13:11:12 UTC
+07-Apr-2018 23:55:19.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.29.0
+07-Apr-2018 23:55:19.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+07-Apr-2018 23:55:19.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.4.0-119-generic
+07-Apr-2018 23:55:19.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+07-Apr-2018 23:55:19.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-8-oracle/jre
+07-Apr-2018 23:55:19.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_161-b12
+07-Apr-2018 23:55:19.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+07-Apr-2018 23:55:19.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 23:55:19.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 23:55:19.646 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/thanhtu/Study/OnlineMathTests/mathtests-admin/conf/logging.properties
+07-Apr-2018 23:55:19.646 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+07-Apr-2018 23:55:19.646 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+07-Apr-2018 23:55:19.647 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+07-Apr-2018 23:55:19.647 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+07-Apr-2018 23:55:19.647 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 23:55:19.647 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/thanhtu/Study/OnlineMathTests/mathtests-admin
+07-Apr-2018 23:55:19.647 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/thanhtu/Study/OnlineMathTests/mathtests-admin/temp
+07-Apr-2018 23:55:19.647 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+07-Apr-2018 23:55:22.697 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 23:55:23.131 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+07-Apr-2018 23:55:23.210 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 23:55:23.213 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+07-Apr-2018 23:55:23.214 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 6461 ms
+07-Apr-2018 23:55:23.512 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+07-Apr-2018 23:55:23.512 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.29
+07-Apr-2018 23:55:23.626 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/thanhtu/Study/OnlineMathTests/mathtests-admin/webapps/ROOT]
+07-Apr-2018 23:55:25.649 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [272] milliseconds.
+07-Apr-2018 23:55:25.949 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/thanhtu/Study/OnlineMathTests/mathtests-admin/webapps/ROOT] has finished in [2,324] ms
+07-Apr-2018 23:55:25.952 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
+07-Apr-2018 23:55:25.976 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+07-Apr-2018 23:55:25.977 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2763 ms

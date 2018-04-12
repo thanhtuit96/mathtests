@@ -81,8 +81,8 @@ public class User implements UserDetails, Serializable {
     private List<Authority> authorities;
 
     
+    @JsonIgnore
     @OneToMany(mappedBy="teacher", fetch = FetchType.LAZY)
-    @JsonManagedReference
     private List<Group> groups;
     
     @JsonIgnore
