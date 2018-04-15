@@ -23,19 +23,20 @@ spring:
     cors:
       allowed-origins : "*"
       allowed-methods : GET, POST, PUT, OPTIONS, DELETE
-      allowed-headers : Content-Type,Authorization,Origin,X-Requested-With,Accept
+      allowed-headers : Content-Type,Authorization,Origin,X-Requested-With,Accept,X-Frame-Options
       exposed-headers : Access-Control-Allow-Origin,Access-Control-Allow-Credentials
       max-age : 3600
-      alllow-credentials : false
+      alllow-credentials : true
 #management:
 endpoints:
     web:
       cors:
         allowed-origins: "*"
         allowed-methods: GET, POST, PUT, OPTIONS, DELETE
+        allow-credentials: true
 # HTTP to HTTPS
-#server:i
-#  port: 8443
+#server:
+#  port: 8080
 #  ssl:
 #    key-aliasey: selfsigned
 #    key-password: password

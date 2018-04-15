@@ -38,9 +38,16 @@ public class QuestionController {
 	    return (List<Question>) questionServiceImpl.getQuestionPublish();
 	}
     
+    @RequestMapping( method = GET, value = "/owner" )
+   	@PreAuthorize("hasRole('SUPERVISOR')")
+   	public List<Question> getOwnerQuestions(@RequestHeader Map<String,String> header) {
+    	String username = tokenHelper.getUsernameFromToken(header.get("authorization").substring(7));
+   	    return (List<Question>) questionServiceImpl.getQuestionOwner(username);
+   	}
+    
     @RequestMapping(value = "/add", method = RequestMethod.POST)
 	@PreAuthorize("hasRole('SUPERVISOR')")
-    public ResponseEntity<?> addQuestion(@RequestHeader Map<String,String> header,
+    public Question addQuestion(@RequestHeader Map<String,String> header,
     									  @RequestBody Map<String,String> body){
     	String content = body.get("content");
     	String answerA = body.get("answerA");
@@ -50,15 +57,16 @@ public class QuestionController {
     	int answerCorrect = Integer.parseInt(body.get("answerCorrect"));
     	String answerCorrectContent = body.get("answerCorrectContent");
         boolean publiced = Boolean.parseBoolean(body.get("publiced"));
-      	String username = tokenHelper.getUsernameFromToken(header.get("Authorization").substring(7));
+      	String username = tokenHelper.getUsernameFromToken(header.get("authorization").substring(7));
+      	System.out.println(username);
       	User owner = (User) userDetailsService.loadUserByUsername(username);
-      	questionServiceImpl.addQuestion(content, answerA, answerB, answerC, answerD, answerCorrect, answerCorrectContent, owner, publiced);
-        return ResponseEntity.accepted().body("success");    	    	
+      	Question q = questionServiceImpl.addQuestion(content, answerA, answerB, answerC, answerD, answerCorrect, answerCorrectContent, owner, publiced);
+        return q;    	    	
     }
        
     @RequestMapping(value = "/update", method = RequestMethod.POST)
 	@PreAuthorize("hasRole('SUPERVISOR')")
-    public ResponseEntity<?> updateQuestion(@RequestHeader Map<String,String> header,
+    public Question updateQuestion(@RequestHeader Map<String,String> header,
     									  @RequestBody Map<String,String> body){
     	long oldId = Long.parseLong(body.get("id"));
     	String content = body.get("content");
@@ -69,14 +77,14 @@ public class QuestionController {
     	int answerCorrect = Integer.parseInt(body.get("answerCorrect"));
     	String answerCorrectContent = body.get("answerCorrectContent");
         boolean publiced = Boolean.parseBoolean(body.get("publiced"));
-      	String username = tokenHelper.getUsernameFromToken(header.get("Authorization").substring(7));
+      	String username = tokenHelper.getUsernameFromToken(header.get("authorization").substring(7));
       	User owner = (User) userDetailsService.loadUserByUsername(username);
       	
       	if(questionServiceImpl.checkQuestionOfOwner(oldId, owner)) {
-      		questionServiceImpl.updateQuestion(oldId, content, answerA, answerB, answerC, answerD, answerCorrect, answerCorrectContent, publiced);	
-      		return ResponseEntity.accepted().body("success");    	    	
+      		return questionServiceImpl.updateQuestion(oldId, content, answerA, answerB, answerC, answerD, answerCorrect, answerCorrectContent, publiced);	
+ 	    	
       	} else {
-      		return ResponseEntity.accepted().body("fail");
+      		return null;
       	}
     }
     

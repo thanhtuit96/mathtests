@@ -1,15 +1,23 @@
 package tdt.it.mathtests.models;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -43,22 +51,27 @@ public class Question implements Serializable{
 	@Column(name="ANSWER_D")
     private String answerD;
 	
-    @JsonIgnore
 	@Column(name="ANSWER_CORRECT")
     private int answerCorrect;
     
-    @JsonIgnore
 	@Column(name="ANSWER_CORRECT_CONTENT")
     private String answerCorrectContent;
 	
 	@ManyToOne
 	@JoinColumn(name="ID_USER")
-    @JsonBackReference
 	private User owner;
 
 	@Column(name = "IS_PUBLIC")
 	private boolean publiced;
 
+	@JsonIgnore
+	@OneToMany(mappedBy="question")
+	private Set<TaskExam> taskDetail;
+	
+	@JsonIgnore
+	@ManyToMany(mappedBy="question")
+	private List<Exam> exams;
+	
 	public Question() {
 		// TODO Auto-generated constructor stub
 	}
@@ -156,6 +169,26 @@ public class Question implements Serializable{
 	public void setPubliced(boolean publiced) {
 		this.publiced = publiced;
 	}
+
+	public Set<TaskExam> getTaskDetail() {
+		return taskDetail;
+	}
+
+	public void setTaskDetail(Set<TaskExam> taskDetail) {
+		this.taskDetail = taskDetail;
+	}
+
+	public List<Exam> getExams() {
+		return exams;
+	}
+
+	public void setExams(List<Exam> exams) {
+		this.exams = exams;
+	}
+
+	
+
+	
 
 	
 }

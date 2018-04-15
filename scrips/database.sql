@@ -50,7 +50,7 @@ DROP TABLE IF EXISTS `M_EXAM`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `M_EXAM` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `TITLE` varchar(45) DEFAULT NULL,
   `TIME_LEFT` tinyint(11) DEFAULT NULL,
   `DATE_IN` datetime DEFAULT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `M_EXAM` (
   PRIMARY KEY (`ID`),
   KEY `fk_EXAM_1_idx` (`SUBJECT_ID`),
   CONSTRAINT `fk_EXAM_1` FOREIGN KEY (`SUBJECT_ID`) REFERENCES `M_SUBJECT` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,6 +67,7 @@ CREATE TABLE `M_EXAM` (
 
 LOCK TABLES `M_EXAM` WRITE;
 /*!40000 ALTER TABLE `M_EXAM` DISABLE KEYS */;
+INSERT INTO `M_EXAM` VALUES (1,'Bài 01-Update',60,'2018-04-15 12:49:08',1);
 /*!40000 ALTER TABLE `M_EXAM` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,6 +94,7 @@ CREATE TABLE `M_EXAM_QUESTION` (
 
 LOCK TABLES `M_EXAM_QUESTION` WRITE;
 /*!40000 ALTER TABLE `M_EXAM_QUESTION` DISABLE KEYS */;
+INSERT INTO `M_EXAM_QUESTION` VALUES (1,1),(1,2),(1,3),(1,4);
 /*!40000 ALTER TABLE `M_EXAM_QUESTION` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,7 +147,7 @@ CREATE TABLE `M_QUESTION` (
   PRIMARY KEY (`ID`),
   KEY `fk_QUESTION_USER_idx` (`ID_USER`),
   CONSTRAINT `fk_QUESTION_USER` FOREIGN KEY (`ID_USER`) REFERENCES `M_USERS` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,7 +156,7 @@ CREATE TABLE `M_QUESTION` (
 
 LOCK TABLES `M_QUESTION` WRITE;
 /*!40000 ALTER TABLE `M_QUESTION` DISABLE KEYS */;
-INSERT INTO `M_QUESTION` VALUES (1,'Tính đạo hàm cấp 2 của hàm số \\(y={{10}^{x}}\\).','\\({{y}^{\'\'}}={{10}^{x}}\\).','\\({{y}^{\'\'}}={{10}^{x}}\\ln {{10}^{2}}\\).','\\({{y}^{\'\'}}={{10}^{x}}{{\\ln }^{2}}10\\).','\\({{y}^{\'\'}}=\\frac{{{10}^{x}}}{{{\\ln }^{2}}10}\\). ',3,NULL,4,''),(2,'Cho hình lập phương\\(ABCD{{A}^{\'}}{{B}^{\'}}{{C}^{\'}}{{D}^{\'}}\\) cạnh \\(a\\). Tính diện tích xung quanh\\({{S}_{xq}}\\)của khối nón có đỉnh là tâm hình vuông\\({{A}^{\'}}{{B}^{\'}}{{C}^{\'}}{{D}^{\'}}\\)và có đường tròn đáy ngoại tiếp hình vuông\\(ABCD\\).','\\({{S}_{xq}}=\\frac{\\pi {{a}^{2}}\\sqrt{3}}{3}\\).','\\({{S}_{xq}}=\\frac{\\pi {{a}^{2}}\\sqrt{2}}{2}\\).','\\({{S}_{xq}}=\\frac{\\pi {{a}^{2}}\\sqrt{3}}{2}\\).','\\({{S}_{xq}}=\\frac{\\pi {{a}^{2}}\\sqrt{6}}{2}\\). ',3,NULL,4,'\0'),(3,'Tìm tất cả các giá trị thực của tham số\\(m\\) để sao cho đồ thị của hàm số \\(y={{x}^{4}}+2m{{x}^{2}}+{{m}^{2}}+2m\\) có ba điểm cực trị và khoảng cách giữa hai điểm cực tiểu bằng 4.','\\(m=-4\\).','\\(m=5\\).','\\(m=\\frac{1}{2}\\).','\\(m=3\\).',1,NULL,4,''),(4,'Trong không gian với hệ tọa độ \\[Oxyz\\], cho tứ diện\\[ABCD\\] với\\[A(1;2;1)\\],<br />\n \\[B(-2;1;3)\\],\\[C(2;-1;1),\\ D(0;3;1)\\]. Viết phương trình mặt phẳng\\[(P)\\]chứa hai điểm\\[A,B\\]sao cho \\[C,\\ D\\]nằm về hai phía khác nhau của\\[(P)\\] đồng thời\\[C,\\ D\\]cách đều\\[(P)\\].','\\[(P): 2x+3z-5=0\\].','\\[(P): 4x+2y+7z-15=0\\].','\\[(P): 3y+z-1=0\\].','\\[(P): x-y+z-5=0\\].',1,NULL,4,'\0'),(5,'Một vật chuyển động theo quy luật \\(S=-\\frac{1}{2}{{t}^{3}}+9{{t}^{2}}+5\\) với \\(t\\) (giây) là khoảng thời gian tính từ khi vật bắt đầu chuyển động và \\(S\\) (mét) là quãng đường vật di chuyển được trong khoảng thời gian đó. Hỏi trong khoảng thời gian \\(8\\) giây, kể từ khi vật bắt đầu chuyển động, vận tốc lớn nhất của vật đạt được bằng bao nhiêu ?',' $$84\\ (m/s)$$.','$$48\\ (m/s)$$.','$$54\\ (m/s)$$.','$$104\\ (m/s)$$.',3,NULL,4,''),(6,'Cho số phức \\(z=1-2i\\). Tính \\(\\left| z \\right|\\).','\\(\\left| z \\right|=5\\).','\\(\\left| z \\right|=\\sqrt{5}\\).','\\(\\left| z \\right|=3\\).','\\(\\left| z \\right|=2\\). ',2,NULL,5,''),(7,'Tìm nghiệm của phương trình \\(\\sin 5x+c\\text{o}{{\\text{s}}^{2}}x-{{\\sin }^{2}}x=0\\).','\\(\\left[ \\begin{array}{l}&lt;br /&gt; x=-\\frac{\\pi }{6}+k\\frac{\\pi }{3} \\\\&lt;br /&gt; x=-\\frac{\\pi }{14}+k\\frac{\\pi }{7} &lt;br /&gt; \\end{array} \\right. \\).','\\[\\left[ \\begin{array}{l}&lt;br /&gt; x=-\\frac{\\pi }{6}+k\\frac{2\\pi }{3} \\\\&lt;br /&gt; x=-\\frac{\\pi }{14}+k\\frac{2\\pi }{7} &lt;br /&gt; \\end{array} \\right. \\).','\\(\\left[ \\begin{array}{l}&lt;br /&gt; x=\\frac{\\pi }{6}+k2\\pi&lt;br /&gt; \\\\&lt;br /&gt; x=\\frac{\\pi }{14}+k2\\pi&lt;br /&gt; \\end{array} \\right. \\).','\\(\\left[ \\begin{array}{l}&lt;br /&gt; x=-\\frac{\\pi }{6}+k2\\pi&lt;br /&gt; \\\\&lt;br /&gt; x=-\\frac{\\pi }{14}+k2\\pi&lt;br /&gt; \\end{array} \\right. \\).',2,NULL,5,'\0'),(8,'Cho một khối lăng trụ có thể tích là\\(\\sqrt{3}. {{a}^{3}}\\), đáy là tam giác đều cạnh \\(a\\). Tính chiều cao \\(h\\) của khối lăng trụ.','\\(h=4a\\).','\\(h=3a\\).','\\(h=2a\\).','\\(h=12a\\).',1,NULL,5,'');
+INSERT INTO `M_QUESTION` VALUES (1,'Tính đạo hàm cấp 2 của hàm số \\(y={{10}^{x}}\\).','\\({{y}^{\'\'}}={{10}^{x}}\\).','\\({{y}^{\'\'}}={{10}^{x}}\\ln {{10}^{2}}\\).','\\({{y}^{\'\'}}={{10}^{x}}{{\\ln }^{2}}10\\).','\\({{y}^{\'\'}}=\\frac{{{10}^{x}}}{{{\\ln }^{2}}10}\\). ',3,NULL,4,''),(2,'Cho hình lập phương\\(ABCD{{A}^{\'}}{{B}^{\'}}{{C}^{\'}}{{D}^{\'}}\\) cạnh \\(a\\). Tính diện tích xung quanh\\({{S}_{xq}}\\)của khối nón có đỉnh là tâm hình vuông\\({{A}^{\'}}{{B}^{\'}}{{C}^{\'}}{{D}^{\'}}\\)và có đường tròn đáy ngoại tiếp hình vuông\\(ABCD\\).','\\({{S}_{xq}}=\\frac{\\pi {{a}^{2}}\\sqrt{3}}{3}\\).','\\({{S}_{xq}}=\\frac{\\pi {{a}^{2}}\\sqrt{2}}{2}\\).','\\({{S}_{xq}}=\\frac{\\pi {{a}^{2}}\\sqrt{3}}{2}\\).','\\({{S}_{xq}}=\\frac{\\pi {{a}^{2}}\\sqrt{6}}{2}\\). ',3,NULL,4,'\0'),(3,'Tìm tất cả các giá trị thực của tham số\\(m\\) để sao cho đồ thị của hàm số \\(y={{x}^{4}}+2m{{x}^{2}}+{{m}^{2}}+2m\\) có ba điểm cực trị và khoảng cách giữa hai điểm cực tiểu bằng 4.','\\(m=-4\\).','\\(m=5\\).','\\(m=\\frac{1}{2}\\).','\\(m=3\\).',1,NULL,4,''),(4,'Trong không gian với hệ tọa độ \\[Oxyz\\], cho tứ diện\\[ABCD\\] với\\[A(1;2;1)\\],<br />\n \\[B(-2;1;3)\\],\\[C(2;-1;1),\\ D(0;3;1)\\]. Viết phương trình mặt phẳng\\[(P)\\]chứa hai điểm\\[A,B\\]sao cho \\[C,\\ D\\]nằm về hai phía khác nhau của\\[(P)\\] đồng thời\\[C,\\ D\\]cách đều\\[(P)\\].','\\[(P): 2x+3z-5=0\\].','\\[(P): 4x+2y+7z-15=0\\].','\\[(P): 3y+z-1=0\\].','\\[(P): x-y+z-5=0\\].',1,NULL,4,'\0'),(5,'Một vật chuyển động theo quy luật \\(S=-\\frac{1}{2}{{t}^{3}}+9{{t}^{2}}+5\\) với \\(t\\) (giây) là khoảng thời gian tính từ khi vật bắt đầu chuyển động và \\(S\\) (mét) là quãng đường vật di chuyển được trong khoảng thời gian đó. Hỏi trong khoảng thời gian \\(8\\) giây, kể từ khi vật bắt đầu chuyển động, vận tốc lớn nhất của vật đạt được bằng bao nhiêu ?',' $$84\\ (m/s)$$.','$$48\\ (m/s)$$.','$$54\\ (m/s)$$.','$$104\\ (m/s)$$.',3,NULL,4,''),(6,'Cho số phức \\(z=1-2i\\). Tính \\(\\left| z \\right|\\).','\\(\\left| z \\right|=5\\).','\\(\\left| z \\right|=\\sqrt{5}\\).','\\(\\left| z \\right|=3\\).','\\(\\left| z \\right|=2\\). ',2,NULL,5,''),(7,'Tìm nghiệm của phương trình \\(\\sin 5x+c\\text{o}{{\\text{s}}^{2}}x-{{\\sin }^{2}}x=0\\).','\\(\\left[ \\begin{array}{l}&lt;br /&gt; x=-\\frac{\\pi }{6}+k\\frac{\\pi }{3} \\\\&lt;br /&gt; x=-\\frac{\\pi }{14}+k\\frac{\\pi }{7} &lt;br /&gt; \\end{array} \\right. \\).','\\[\\left[ \\begin{array}{l}&lt;br /&gt; x=-\\frac{\\pi }{6}+k\\frac{2\\pi }{3} \\\\&lt;br /&gt; x=-\\frac{\\pi }{14}+k\\frac{2\\pi }{7} &lt;br /&gt; \\end{array} \\right. \\).','\\(\\left[ \\begin{array}{l}&lt;br /&gt; x=\\frac{\\pi }{6}+k2\\pi&lt;br /&gt; \\\\&lt;br /&gt; x=\\frac{\\pi }{14}+k2\\pi&lt;br /&gt; \\end{array} \\right. \\).','\\(\\left[ \\begin{array}{l}&lt;br /&gt; x=-\\frac{\\pi }{6}+k2\\pi&lt;br /&gt; \\\\&lt;br /&gt; x=-\\frac{\\pi }{14}+k2\\pi&lt;br /&gt; \\end{array} \\right. \\).',2,NULL,5,'\0'),(8,'Cho một khối lăng trụ có thể tích là\\(\\sqrt{3}. {{a}^{3}}\\), đáy là tam giác đều cạnh \\(a\\). Tính chiều cao \\(h\\) của khối lăng trụ.','\\(h=4a\\).','\\(h=3a\\).','\\(h=2a\\).','\\(h=12a\\).',1,NULL,5,''),(9,'1+1=?','2','3','4','5',1,'1+1=2',4,'\0'),(10,'1+1=?','2','3','4','5',1,'1+1=2',4,'\0'),(11,'1+1=?','2','3','4','5',1,'1+1=2',4,'\0'),(12,'1+1=?','2','3','4','5',1,'1+1=2',4,'\0'),(13,'1+1=?','2','3','4','5',1,'1+1=2',4,'\0'),(14,'1+1=?','2','3','4','5',1,'1+1=2',4,'\0'),(15,'1+1=?','2','3','4','5',1,'1+1=2',4,'\0'),(16,'1+1=?','2','3','4','5',1,'1+1=2',4,'\0'),(17,'1+1=','2','3','4','5',1,'1+1=2',4,'\0'),(18,'1+1=','2','3','4','5',1,'1+1=2',4,'\0'),(19,'1+1=','2','3','4','5',1,'1+1=2',4,'\0'),(20,'1+1=','2','3','4','5',1,'1+1=2',4,'\0'),(21,'2+2=','2','3','4','5',3,'2+2=4',4,'');
 /*!40000 ALTER TABLE `M_QUESTION` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,17 +195,18 @@ DROP TABLE IF EXISTS `M_TASKS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `M_TASKS` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `USER_ID` int(11) DEFAULT NULL,
   `EXAM_ID` int(11) DEFAULT NULL,
   `TIME_IN` datetime DEFAULT NULL,
   `TIME_UT` datetime DEFAULT NULL,
+  `SCORE` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`),
   KEY `fk_TASKS_1_idx` (`EXAM_ID`),
   KEY `fk_TASKS_2_idx` (`USER_ID`),
   CONSTRAINT `fk_TASKS_1` FOREIGN KEY (`EXAM_ID`) REFERENCES `M_EXAM` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_TASKS_2` FOREIGN KEY (`USER_ID`) REFERENCES `M_USERS` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -212,6 +215,7 @@ CREATE TABLE `M_TASKS` (
 
 LOCK TABLES `M_TASKS` WRITE;
 /*!40000 ALTER TABLE `M_TASKS` DISABLE KEYS */;
+INSERT INTO `M_TASKS` VALUES (1,4,1,'2018-04-15 21:30:12','2018-04-15 21:30:16',0),(2,4,1,'2018-04-15 21:32:58','2018-04-15 21:33:01',0);
 /*!40000 ALTER TABLE `M_TASKS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -271,7 +275,7 @@ CREATE TABLE `M_USERS` (
 
 LOCK TABLES `M_USERS` WRITE;
 /*!40000 ALTER TABLE `M_USERS` DISABLE KEYS */;
-INSERT INTO `M_USERS` VALUES (1,'superadmin','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Tú','Nguyễn','1996-10-06','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-04-08 22:08:08'),(2,'admin00','$2a$10$KvjGyhYFzF8V3gp6NjtOwepUlTzGsclIf/RIW5f0BSZzzx4DcwlBm','Tony','Tèo','2017-09-22','tuilateo@gmail.com','','2018-04-12 20:51:09','2018-04-12 22:28:22'),(3,'admin01','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Quang','Trần','1996-10-06','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-03-27 07:16:36'),(4,'teacher00','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Tú','Nguyễn Thanh','1997-11-13','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-04-12 15:30:49'),(5,'teacher01','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Toàn','Nguyễn Duy','1996-10-26','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-04-01 10:14:04'),(6,'user00','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Quang','Trần Dương','1996-10-15','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-03-27 12:38:09'),(7,'user01','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Tú','Nguyễn Thanh','1996-10-06','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-03-25 00:00:00'),(8,'thanhtu','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Tú','Nguyễn Thanh','1996-10-30','Nguyenthanhtubassad','\0','2018-03-27 10:07:10',NULL),(9,'thanhtu02','$2a$10$iwuqj/gxfRpib3zAOMYoQ.6qvrjVP1nXehqoq8JJ3BYciUVg.EwIu','Tú','Nguyễn Thanh','1996-10-06','Nguyenthanhtubassad','','2018-03-27 12:40:00',NULL),(10,'thanhtu03','$2a$10$M3xJefB3Tw/.5J8A49jigelxZOgSOf70BYuOkHM1A2Nlmx3MoOSsi','Tú','Nguyễn','1996-10-06','Nguyenthanhtubassad','','2018-04-12 20:40:40',NULL);
+INSERT INTO `M_USERS` VALUES (1,'superadmin','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Tú','Nguyễn','1996-10-06','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-04-08 22:08:08'),(2,'admin00','$2a$10$KvjGyhYFzF8V3gp6NjtOwepUlTzGsclIf/RIW5f0BSZzzx4DcwlBm','Tony','Tèo','2017-09-22','tuilateo@gmail.com','','2018-04-12 20:51:09','2018-04-15 16:31:36'),(3,'admin01','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Quang','Trần','1996-10-06','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-03-27 07:16:36'),(4,'teacher00','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Tú','Nguyễn Thanh','1997-11-13','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-04-15 22:01:53'),(5,'teacher01','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Toàn','Nguyễn Duy','1996-10-26','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-04-01 10:14:04'),(6,'user00','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Quang','Trần Dương','1996-10-15','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-03-27 12:38:09'),(7,'user01','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Tú','Nguyễn Thanh','1996-10-06','nguyenthanhtuba96@gmail.com','','2018-03-25 00:00:00','2018-03-25 00:00:00'),(8,'thanhtu','$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra','Tú','Nguyễn Thanh','1996-10-30','Nguyenthanhtubassad','\0','2018-03-27 10:07:10',NULL),(9,'thanhtu02','$2a$10$iwuqj/gxfRpib3zAOMYoQ.6qvrjVP1nXehqoq8JJ3BYciUVg.EwIu','Tú','Nguyễn Thanh','1996-10-06','Nguyenthanhtubassad','','2018-03-27 12:40:00',NULL),(10,'thanhtu03','$2a$10$M3xJefB3Tw/.5J8A49jigelxZOgSOf70BYuOkHM1A2Nlmx3MoOSsi','Tú','Nguyễn','1996-10-06','Nguyenthanhtubassad','','2018-04-12 20:40:40',NULL);
 /*!40000 ALTER TABLE `M_USERS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -311,4 +315,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-12 22:50:57
+-- Dump completed on 2018-04-15 22:24:14

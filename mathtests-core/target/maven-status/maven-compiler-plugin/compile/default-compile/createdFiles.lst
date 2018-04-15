@@ -3,7 +3,6 @@ tdt/it/mathtests/security/auth/RestAuthenticationEntryPoint.class
 tdt/it/mathtests/controllers/SubjectController.class
 tdt/it/mathtests/App.class
 tdt/it/mathtests/repository/AuthorityRepository.class
-tdt/it/mathtests/configuration/CorsFilterConfig.class
 tdt/it/mathtests/models/Authority.class
 tdt/it/mathtests/common/DeviceProvider.class
 tdt/it/mathtests/controllers/UserController.class

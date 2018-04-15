@@ -89,6 +89,10 @@ public class User implements UserDetails, Serializable {
     @OneToMany(mappedBy="owner", fetch = FetchType.LAZY)
     private List<Question> questions;
     
+    @JsonIgnore
+    @OneToMany(mappedBy="user")
+    private List<Task> tasks;
+    
     public Long getId() {
         return id;
     }
@@ -213,6 +217,14 @@ public class User implements UserDetails, Serializable {
 
 	public void setQuestions(List<Question> questions) {
 		this.questions = questions;
+	}
+
+	public List<Task> getTasks() {
+		return tasks;
+	}
+
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
 	}
 
 	

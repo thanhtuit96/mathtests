@@ -15,9 +15,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="M_EXAM")
@@ -47,7 +52,11 @@ public class Exam implements Serializable{
     @JsonBackReference
 	private Subject subject;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonIgnore
+    @OneToMany(mappedBy="exam")
+    private List<Task> tasks;
+	
+	@ManyToMany
     @JoinTable(name = "M_EXAM_QUESTION",
             joinColumns = @JoinColumn(name = "EXAM_ID", referencedColumnName = "ID"),
             inverseJoinColumns = @JoinColumn(name = "QUESTION_ID", referencedColumnName = "ID"))
@@ -57,6 +66,13 @@ public class Exam implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
+	public Exam(String title,int timeleft, Subject s) {
+		// TODO Auto-generated constructor stub
+		this.title = title;
+		this.timeLeft = timeleft;
+		this.subject = s;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -104,6 +120,14 @@ public class Exam implements Serializable{
 	public void setQuestion(List<Question> question) {
 		this.question = question;
 	}
-	
 
+	/*public List<Task> getTasks() {
+		return tasks;
+	}
+
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
+	}*/
+	
+	
 }
