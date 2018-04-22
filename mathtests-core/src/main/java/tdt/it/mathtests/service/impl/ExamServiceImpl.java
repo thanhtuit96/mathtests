@@ -36,6 +36,10 @@ public class ExamServiceImpl{
 		return subjectRepository.findSubjectById(subjectID).getExam();
 	}
 	
+	public List<Question> getQuestion(long idExam){
+		return examRepository.findExamById(idExam).getQuestion();
+	}
+	
 	public Exam updateExam(long id, String title, int timeleft) {
 		Exam e = examRepository.findExamById(id);
 		e.setTitle(title);

@@ -3,6 +3,7 @@ package tdt.it.mathtests.models;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -109,9 +110,7 @@ public class Task implements Serializable{
 	}
 
 	public int getScore() {
-		if(taskDetail == null)
-			return 0;
-		return (int) taskDetail.stream().filter(o->o.isCorrect()).count();
+		return score;
 	}
 
 	public Set<TaskExam> getTaskDetail() {
@@ -126,6 +125,10 @@ public class Task implements Serializable{
 		this.score = score;
 	}
 
-	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return Objects.hash(id);
+	}
 	
 }

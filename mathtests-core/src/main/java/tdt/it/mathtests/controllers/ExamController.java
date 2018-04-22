@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import tdt.it.mathtests.models.Exam;
+import tdt.it.mathtests.models.Question;
 import tdt.it.mathtests.security.TokenHelper;
 import tdt.it.mathtests.service.impl.ExamServiceImpl;
 
@@ -63,4 +64,12 @@ public class ExamController {
     	String id = body.get("id");
     	return examServiceImpl.getAll(Integer.parseInt(id));   	    	
     }
+    
+    @RequestMapping(value = "/getquestions", method = RequestMethod.POST)
+	@PreAuthorize("hasRole('USER')")
+    public List<Question> getQuestionExam(@RequestBody Map<String,String> body){
+    	String id = body.get("idExam");
+    	return examServiceImpl.getQuestion(Long.parseLong(id));  	    	
+    }
+    
 }

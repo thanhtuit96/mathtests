@@ -1,21 +1,26 @@
 package tdt.it.mathtests.models;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Data;
+
 
 @Entity
 @Table(name="M_TASK_DETAIL")
+@Data
 public class TaskExam implements Serializable{
 
 
@@ -23,15 +28,17 @@ public class TaskExam implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 2823018059006526410L;
-
-	@EmbeddedId
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="TASK_ID")
-	private Task task;
 	
 	@EmbeddedId
+	private TaskExamId id;
+	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="QUESTION_ID")
+	@MapsId("taskId")
+	private Task task;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@MapsId("questionId")
 	private Question question;
 	
 	@Basic
@@ -46,6 +53,7 @@ public class TaskExam implements Serializable{
 		// TODO Auto-generated constructor stub
 		this.task = t;
 		this.question = q;
+		this.id = new TaskExamId(t.getId(), q.getId());
 		this.answer = ans;
 	}
 	
@@ -76,11 +84,12 @@ public class TaskExam implements Serializable{
 	public boolean isCorrect() {
 		return this.answer == this.question.getAnswerCorrect();
 	}
-	/*@Override
+	
+	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return this.task.hashCode() * this.question.hashCode();
-	}*/
+	        return Objects.hash(task, question);
+	}
+	
 	@Override
 	public boolean equals(Object arg0) {
 		if(arg0 == null)

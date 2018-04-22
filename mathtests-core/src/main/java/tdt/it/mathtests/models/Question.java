@@ -2,6 +2,7 @@ package tdt.it.mathtests.models;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -186,7 +187,11 @@ public class Question implements Serializable{
 		this.exams = exams;
 	}
 
-	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return Objects.hash(id);
+	}
 
 	
 

@@ -19,6 +19,7 @@ import tdt.it.mathtests.models.User;
 import tdt.it.mathtests.repository.ExamRepository;
 import tdt.it.mathtests.repository.GroupRepository;
 import tdt.it.mathtests.repository.QuestionRepository;
+import tdt.it.mathtests.repository.TaskDetailRepository;
 import tdt.it.mathtests.repository.TaskRepository;
 import tdt.it.mathtests.repository.UserRepository;
 
@@ -27,6 +28,9 @@ public class TaskServiceImpl{
 
     @Autowired
 	private TaskRepository taskRepository;
+    
+    @Autowired
+	private TaskDetailRepository taskDetailRepository;
     
     @Autowired
     private UserRepository userRepository;
@@ -72,20 +76,24 @@ public class TaskServiceImpl{
 			task.setTimeUp(new Timestamp(System.currentTimeMillis()));
 		else {
 			Timestamp now = new Timestamp(System.currentTimeMillis());
-			if( task.getTimeIn().getTime() + timeLeft*60 > now.getTime())
+			Timestamp timeMake = new Timestamp(task.getTimeIn().getTime() + (long)timeLeft*60*1000);
+			if(timeMake.before(now))
 				return null;
 			else 
 				task.setTimeUp(new Timestamp(System.currentTimeMillis()));
 		}
 		Set<TaskExam> taskDetail = new LinkedHashSet<TaskExam>();
 		String a[];
-		
 		for(String ans : answer) {
 			a=ans.split("-");
 			Question q = questionRepository.findQuestionById(Long.parseLong(a[0]));
 			taskDetail.add(new TaskExam(task, q, Integer.parseInt(a[1])));
 		}
-		task.setTaskDetail(taskDetail);
+		for(TaskExam t : taskDetail) {
+			taskDetailRepository.save(t);
+		}
+		int score = (int) task.getTaskDetail().stream().filter(o->o.isCorrect()).count();
+		task.setScore(score);
 		taskRepository.save(task);
 		return task;
 	}

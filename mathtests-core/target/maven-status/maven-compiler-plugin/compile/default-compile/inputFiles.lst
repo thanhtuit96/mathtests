@@ -27,6 +27,7 @@
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/controllers/GroupController.java
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/controllers/AuthenticationController.java
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/controllers/SubjectController.java
+/home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/models/TaskExamId.java
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/App.java
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/security/auth/JwtAuthenticationRequest.java
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/repository/QuestionRepository.java
@@ -36,5 +37,6 @@
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/repository/UserRepository.java
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/security/TokenHelper.java
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/models/Exam.java
+/home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/repository/TaskDetailRepository.java
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/security/auth/TokenAuthenticationFilter.java
 /home/thanhtu/Study/OnlineMathTests/mathtests-core/src/main/java/tdt/it/mathtests/service/impl/CustomUserDetailsServiceImpl.java

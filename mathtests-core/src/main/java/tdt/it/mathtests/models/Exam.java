@@ -56,6 +56,7 @@ public class Exam implements Serializable{
     @OneToMany(mappedBy="exam")
     private List<Task> tasks;
 	
+	@JsonIgnore
 	@ManyToMany
     @JoinTable(name = "M_EXAM_QUESTION",
             joinColumns = @JoinColumn(name = "EXAM_ID", referencedColumnName = "ID"),
